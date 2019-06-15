@@ -1,5 +1,6 @@
 package miniville.ihm;
 import miniville.metier.*;
+import java.util.ArrayList;
 
 public class Controleur 
 {
@@ -53,14 +54,17 @@ public class Controleur
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             LIEN AFFICHAGE
 
-	public void transition        (Joueur joueur) { this.ihm.transition(joueur);        }
-	public void afficherBanque    ()              { this.ihm.afficherBanque();          }
-	public void jetDe             (Joueur joueur) { this.ihm.jetDe(joueur);             }
-	public void afficherEtatJoueur(Joueur joueur) { this.ihm.afficherEtatJoueur(joueur);}
-	public void afficherEtat      ()              { this.ihm.afficherEtat();            }
-	public void erreurLanceDe     ()              { this.ihm.erreurLanceDe();           }
-	public void gagner            (String joueur) { this.ihm.gagner(joueur);            }
-	public void rejouer           (String joueur) { this.ihm.rejouer(joueur);           }
+	public void transition        (String joueur)               { this.ihm.transition(joueur);        }
+	public void afficherBanque    ()                            { this.ihm.afficherBanque();          }
+	public void jetDe             (int de1,int de2)             { this.ihm.jetDe(de1,de2);            }
+	public void afficherEtat      ()                            { this.ihm.afficherEtat();            }
+	public void erreurLanceDe     ()                            { this.ihm.erreurLanceDe();           }
+	public void gagner            (String joueur)               { this.ihm.gagner(joueur);            }
+	public void rejouer           (String joueur)               { this.ihm.rejouer(joueur);           }
+		public void afficherEtatJoueur(ArrayList<Carte> cartes,String nom,int piece )
+		{
+			this.ihm.afficherEtatJoueur(cartes,nom,piece);
+		}
 
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             DEBUG

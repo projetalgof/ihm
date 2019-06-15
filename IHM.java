@@ -1,6 +1,5 @@
 package miniville.ihm;
 import miniville.metier.*;
-
 import java.util.*;
 import java.util.regex.*;
 
@@ -253,17 +252,17 @@ public class IHM {
 	}
 
 	// affiche le jet de dé obtenue
-	public void jetDe(Joueur joueur) 
+	public void jetDe(int de1,int de2) 
 	{
-		System.out.println("1er de --> "+ joueur.getDe(0) + (joueur.getDe(1) > 0 ? "  2eme de --> : " + joueur.getDe(1) : ""));
-		System.out.println("\njet de dé : " + joueur.getSommeDe() + "");
+		System.out.println("1er de --> "+ de1 + (de2 > 0 ? "  2eme de --> : " + de2 : ""));
+		System.out.println("\njet de dé : " + (de1+de2) + "");
 	}
 
 	// affiche une transition au debut du tour d'un joueur
-	public void transition(Joueur joueur) 
+	public void transition(String joueur) 
 	{
 		System.out.println("____________________________________________________________________________________________________");
-		System.out.println("A " + joueur.getNom() + " DE JOUER");
+		System.out.println("A " + joueur + " DE JOUER");
 
 	}
 
@@ -275,7 +274,7 @@ public class IHM {
 
 		for (Joueur j : this.ctrl.getMetier().getJoueurs()) 
 		{
-			afficherEtatJoueur(j);
+			afficherEtatJoueur(j.getListCartes(),j.getNom(),j.getPiece());
 		}
 		System.out.println("__________________________________________");
 	}
@@ -317,9 +316,8 @@ public class IHM {
 	}
 
 	// affiche les differente information concernant un joueur
-	public void afficherEtatJoueur(Joueur joueur) 
+	public void afficherEtatJoueur(ArrayList<Carte> cartes,String nom,int piece) 
 	{
-		ArrayList<Carte> cartes = joueur.getListCartes();
 		Collections.sort(cartes);
 		ArrayList<Monument> ensMonument = new ArrayList<Monument>();
 
@@ -327,7 +325,7 @@ public class IHM {
 		String l = "+-----+--------------------+------+\n";
 
 		s += "+---------------------------------+\n";
-		s += "|" + StringUtils.center(joueur.getNom(), 33) + "|\n";
+		s += "|" + StringUtils.center(nom, 33) + "|\n";
 		s += l;
 
 		while (!cartes.isEmpty()) 
@@ -369,7 +367,7 @@ public class IHM {
 		s += l;
 		s += String.format("|%-26s|", "PIECES :");
 
-		s += String.format("%6s|", joueur.getPiece()) + "\n";
+		s += String.format("%6s|", piece) + "\n";
 		;
 
 		s += "+---------------------------------+\n";
