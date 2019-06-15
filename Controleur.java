@@ -1,5 +1,5 @@
 package miniville.ihm;
-import miniville.metier.*;;
+import miniville.metier.*;
 
 public class Controleur 
 {
@@ -32,10 +32,13 @@ public class Controleur
 	//                                             LIEN ACHAT
 	public String achatEtablissement ()                               { return this.ihm.achatEtablissement(); }
 	public String achatMonument      ()                               { return this.ihm.achatMonument();      }
-	public void   achatValide        ( Joueur joueur , Carte carte )  { this.ihm.achatValide(joueur,carte) ;  }
 	public void   achatErreur        ()                               { this.ihm.achatErreur() ;              }
 	public void   achatMonumentErreur()                               { this.ihm.achatMonumentErreur() ;      }
 	public void   achatVioletErreur  ()                               { this.ihm.achatVioletErreur() ;        }
+	public void   achatValide        (String joueur, String nomCarte,String coutCarte)  
+	{
+		this.ihm.achatValide(joueur,nomCarte,coutCarte) ;  
+	}
 
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             LIEN CARTE
@@ -56,8 +59,8 @@ public class Controleur
 	public void afficherEtatJoueur(Joueur joueur) { this.ihm.afficherEtatJoueur(joueur);}
 	public void afficherEtat      ()              { this.ihm.afficherEtat();            }
 	public void erreurLanceDe     ()              { this.ihm.erreurLanceDe();           }
-	public void gagner            (Joueur joueur) { this.ihm.gagner(joueur);            }
-	public void rejouer           (Joueur joueur) { this.ihm.rejouer(joueur);           }
+	public void gagner            (String joueur) { this.ihm.gagner(joueur);            }
+	public void rejouer           (String joueur) { this.ihm.rejouer(joueur);           }
 
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             DEBUG

@@ -165,13 +165,13 @@ public class IHM {
 	}
 
 	// en cas d'achat valide
-	public void achatValide(Joueur joueur, Carte carte)
+	public void achatValide(String joueur, String nomCarte,String coutCarte)
 	{
 		String l = "+---------------+--------------------+------+\n";
 		String s = "+-------------------------------------------+\n";
 		s += "|" + StringUtils.center("Achat", 43) + "|" + "\n";
 		s += l;
-		s += String.format("|%-15s|%-20s|%5d$|", joueur.getNom(), carte.getNom(), carte.getCout()) + "\n";
+		s += String.format("|%-15s|%-20s|%5d$|", joueur, nomCarte, coutCarte + "\n");
 		s += l;
 
 		System.out.println(s);
@@ -237,14 +237,14 @@ public class IHM {
 
 	// ----------------------------------------------------------------------------------------------------------------
 	// GERE LES AFFICHAGE BRUT
-	public void rejouer(Joueur joueur)
+	public void rejouer(String joueur)
 	{
-		System.out.println("Le joueur : " + joueur.getNom() +"a fait un double , il rejoue");
+		System.out.println("Le joueur : " + joueur +"a fait un double , il rejoue");
 	}
 	// affiche une erreur dans le lancer de de
-	public void gagner(Joueur joueur) 
+	public void gagner(String joueur) 
 	{
-		System.out.println("Le joueur : " + joueur.getNom() + " a ganer . BRAVO !!!");
+		System.out.println("Le joueur : " + joueur + " a ganer . BRAVO !!!");
 	}
 
 	public void erreurLanceDe() 
