@@ -385,13 +385,18 @@ public class IHM {
 		System.out.print("DEBUG : choisir le jet de dé :");
 		return sc.nextInt();
 	}
+	//----------------------------------------------------------------------------------------------------------------
+	//                                              VIOLET
 
-
+	public void effetViolet(String nom)
+	{
+		System.out.println("Effet de la carte special -->"+ nom + " <-- activer");
+	}
 	// choisit un joueur
 	public String choisitUnJoueur() 
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Choisir un Joueur");
+		System.out.println("Choisir un Joueur a qui vous vouler echanger une carte");
 		return sc.nextLine();
 	}
 	public void erreurSaisrNomJoueur() 
@@ -410,6 +415,10 @@ public class IHM {
 	}
 	public void donnerLeCarte(String joueur) 
 	{
-		System.out.println("Choisir un Carte et donner à " + joueur);
+		System.out.println("Choisir la Carte a echanger à " + joueur);
+	}
+	public void echange (String nom1,String carte1,String nom2,String carte2)
+	{
+		System.out.println("le joueur ->"+nom1+" a echanger -> "+carte1+" au joueur -> "+nom2+" contre la carte ->"+carte2);
 	}
 }

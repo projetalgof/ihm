@@ -72,12 +72,17 @@ public class Controleur
 	public int debugJetDe() { return this.ihm.debugJetDe() ;}
 
 	//----------------------------------------------------------------------------------------------------------------
-	//----------------------------------violet
+	//-                                       VIOLET
 	public String choisitUnJoueur       ()              { return this.ihm.choisitUnJoueur(); }
 	public void   erreurSaisirNomJoueur ()              { this.ihm.erreurSaisrNomJoueur();   }
 	public String choisitUnCarte        ()              { return this.ihm.choisitUnCarte();  }
 	public void   erreurSaisirNomCarte  ()              { this.ihm.erreurSaisrNomCarte();    }
-	public void   donnerLeCarteAQu      (String joueur) { this.ihm.donnerLeCarte(joueur);    }
+	public void   donnerLeCarte         (String joueur) { this.ihm.donnerLeCarte(joueur);    }
+	public void   effetViolet           (String nom)    { this.ihm.effetViolet(nom);         }
+	public void   echange               (String nom1,String carte1,String nom2,String carte2)
+	{
+		this.ihm.echange(nom1,carte1,nom2,carte2);
+	}
 
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             GET
