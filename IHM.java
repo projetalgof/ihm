@@ -6,7 +6,8 @@ import miniville.metier.Monument;
 import java.util.*;
 import java.util.regex.*;
 
-public class IHM {
+public class IHM 
+{
 	private Controleur ctrl;
 
 	public IHM(Controleur ctrl) 
@@ -137,8 +138,9 @@ public class IHM {
 		Scanner sc = new Scanner(System.in);
 		String nomMonument = "";
 		System.out.println("Quelle monuments souhaiter vous acheter ?");
-		System.out.println("[G] Gare");
+		
 		System.out.println("[C] Centre commercial");
+		System.out.println("[G] Gare");
 		System.out.println("[P] Parc d'attraction");
 		System.out.println("[T] Tour radio");
 		char choix = sc.next().charAt(0);
@@ -241,17 +243,30 @@ public class IHM {
 	// GERE LES AFFICHAGE BRUT
 	public void rejouer(String joueur)
 	{
-		System.out.println("Le joueur : " + joueur +" a fait un double , il rejoue");
+		System.out.println("Le joueur : " + joueur +" a fait un double, il rejoue");
 	}
 	// affiche une erreur dans le lancer de de
 	public void gagner(String joueur) 
 	{
-		System.out.println("Le joueur : " + joueur + " a ganer . BRAVO !!!");
+		String l = "+--------------------------------------+\n";
+		String s = l;
+
+		s += "|" + StringUtils.center("BRAVO", 38) + "|\n";
+		s += l;
+		s += "|" + StringUtils.center(joueur + " a Gagner", 38) + "|\n";
+		s += l;
+		System.out.println(s);
 	}
 
 	public void erreurLanceDe() 
 	{
-		System.out.println("Vous n'aviez pas la tour radio ou aviez déjà lancer vos deux dé durant ce tour.");
+		String l = "+--------------------------------------------------------------------------------+\n";
+		String s = l;
+		s += "|" + StringUtils.center("Erreur dé", 80) + "|" + "\n";
+		s += l;
+		s += "|" + StringUtils.center("Vous n'avais pas la tour radio ou avais deja lancer vos deux fois ce tour si", 80) + "|" + "\n";
+		s += l;
+		System.out.println(s);
 	}
 
 	// affiche le jet de dé obtenue
@@ -391,13 +406,20 @@ public class IHM {
 
 	public void effetViolet(String nom)
 	{
-		System.out.println("Effet de la carte special -->"+ nom + " <-- activer");
+		String l = "+-------------------------------------------+\n";
+		String s = "+-------------------------------------------+\n";
+		s += "|" + StringUtils.center("Effet de la carte special active", 43) + "|" + "\n";
+		s += l;
+		s += "|" + StringUtils.center(nom, 43) + "|" + "\n";
+		s += l;
+
+		System.out.println(s);
 	}
 	// choisit un joueur
 	public String choisitUnJoueur() 
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Choisir un Joueur a qui vous vouler echanger une carte");
+		System.out.println("Choisir le Joueur à qui vous voulez echanger une carte");
 		return sc.nextLine();
 	}
 	public void erreurSaisrNomJoueur() 
@@ -420,6 +442,17 @@ public class IHM {
 	}
 	public void echange (String nom1,String carte1,String nom2,String carte2)
 	{
-		System.out.println("le joueur ->"+nom1+" a echanger -> "+carte1+" au joueur -> "+nom2+" contre la carte ->"+carte2);
+		String l = "+--------------------+--------------------+--------------------+--------------------+\n";
+		String s = "+-----------------------------------------------------------------------------------+\n";
+		s += "|" + StringUtils.center("Echange ", 83) + "|" + "\n";
+		s += l;
+		s += String.format("|%-20s|%-20s|%20s|%20s|", "Joueur qui echange", "Carte", "joueur qui subit", "Carte") + "\n";
+		s += l;
+		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "+ "+carte2, nom2, "- "+ carte1) + "\n";
+		s += l;
+		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "- "+carte1, nom2, "+ "+ carte2) + "\n";
+		s += l;
+
+		System.out.println(s);
 	}
 }
