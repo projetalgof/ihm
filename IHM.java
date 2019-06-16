@@ -241,7 +241,7 @@ public class IHM {
 	// GERE LES AFFICHAGE BRUT
 	public void rejouer(String joueur)
 	{
-		System.out.println("Le joueur : " + joueur +"a fait un double , il rejoue");
+		System.out.println("Le joueur : " + joueur +" a fait un double , il rejoue");
 	}
 	// affiche une erreur dans le lancer de de
 	public void gagner(String joueur) 
@@ -350,6 +350,7 @@ public class IHM {
 					{
 						cpt++;
 						cartes.remove(i);
+						i--;
 					}
 				}
 				s += String.format("|%-5s", carte.getDeclencheur());
