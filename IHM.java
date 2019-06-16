@@ -448,9 +448,9 @@ public class IHM
 		s += l;
 		s += String.format("|%-20s|%-20s|%20s|%20s|", "Joueur qui echange", "Carte", "joueur qui subit", "Carte") + "\n";
 		s += l;
-		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "+ "+carte2, nom2, "- "+ carte1) + "\n";
+		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "- "+carte2, nom2, "- "+ carte1) + "\n";
 		s += l;
-		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "- "+carte1, nom2, "+ "+ carte2) + "\n";
+		s += String.format("|%-20s|%-20s|%20s|%20s|", nom1, "+ "+carte1, nom2, "+ "+ carte2) + "\n";
 		s += l;
 
 		System.out.println(s);
