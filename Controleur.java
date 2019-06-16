@@ -36,7 +36,7 @@ public class Controleur
 	public void   achatErreur        ()                               { this.ihm.achatErreur() ;              }
 	public void   achatMonumentErreur()                               { this.ihm.achatMonumentErreur() ;      }
 	public void   achatVioletErreur  ()                               { this.ihm.achatVioletErreur() ;        }
-	public void   achatValide        (String joueur, String nomCarte,String coutCarte)  
+	public void   achatValide        (String joueur, String nomCarte,int coutCarte)  
 	{
 		this.ihm.achatValide(joueur,nomCarte,coutCarte) ;  
 	}
@@ -77,7 +77,7 @@ public class Controleur
 	public void   erreurSaisirNomJoueur ()              { this.ihm.erreurSaisrNomJoueur();   }
 	public String choisitUnCarte        ()              { return this.ihm.choisitUnCarte();  }
 	public void   erreurSaisirNomCarte  ()              { this.ihm.erreurSaisrNomCarte();    }
-	public void   donnerLeCarteAQu      (Joueur joueur) { this.ihm.donnerLeCarte(joueur);    }
+	public void   donnerLeCarteAQu      (String joueur) { this.ihm.donnerLeCarte(joueur);    }
 
 	//----------------------------------------------------------------------------------------------------------------
 	//                                             GET

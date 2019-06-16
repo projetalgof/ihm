@@ -1,5 +1,8 @@
 package miniville.ihm;
-import miniville.metier.*;
+import miniville.metier.Carte;
+import miniville.metier.EnumCarte;
+import miniville.metier.Joueur;
+import miniville.metier.Monument;
 import java.util.*;
 import java.util.regex.*;
 
@@ -164,13 +167,13 @@ public class IHM {
 	}
 
 	// en cas d'achat valide
-	public void achatValide(String joueur, String nomCarte,String coutCarte)
+	public void achatValide(String joueur, String nomCarte,int coutCarte)
 	{
 		String l = "+---------------+--------------------+------+\n";
 		String s = "+-------------------------------------------+\n";
 		s += "|" + StringUtils.center("Achat", 43) + "|" + "\n";
 		s += l;
-		s += String.format("|%-15s|%-20s|%5d$|", joueur, nomCarte, coutCarte + "\n");
+		s += String.format("|%-15s|%-20s|%6s|\n", joueur, nomCarte, coutCarte);
 		s += l;
 
 		System.out.println(s);
@@ -405,8 +408,8 @@ public class IHM {
 	{
 		System.out.println("Saisir un nom carte");
 	}
-	public void donnerLeCarte(Joueur joueur) 
+	public void donnerLeCarte(String joueur) 
 	{
-		System.out.println("Choisir un Carte et donner à " + joueur.getNom());
+		System.out.println("Choisir un Carte et donner à " + joueur);
 	}
 }
